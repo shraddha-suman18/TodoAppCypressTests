@@ -1,21 +1,23 @@
+import TodoPage from "../../Support/Pages/todoPage";
+
+
 context('Add task', () => {
+    var todoPage = new TodoPage();
 	beforeEach(()=>{
 		cy.visit("http://localhost:8080/");	
 	});
 
 	it('should add and list the task added',()=>{
 	    var text= 'first item';
-		cy.get('#item').type(text);
-		cy.get("#add").click();
-		cy.xpath("//li[contains(text(),'"+text+"')]").should('be.visible');
+		todoPage.addItem(text)
+		verifyTodoItemExist(text);
 	});
 
 	it('should be able to add duplicate item',()=>{
 	    var text= 'second item';
-        cy.get('#item').type(text);
-    	cy.get("#add").click();
-    	cy.get('#item').type(text);
-        cy.get("#add").click();
+        todoPage.addItem(text)
+    	todoPage.addItem(text)
     	cy.xpath("//li[contains(text(),'"+text+"')]").should('have.length', 2);
 	});
-})
+
+});
