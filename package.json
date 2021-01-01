@@ -1,7 +1,7 @@
 {
-  "name": "selconfcypress",
+  "name": "cypressTest",
   "version": "1.0.0",
-  "description": "I am trying cypress",
+  "description": "e2e tests using cypress",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,7 @@
   "author": "Shraddha",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^3.8.1"
+    "cypress": "^6.2.0"
   },
   "devDependencies": {
     "cypress-xpath": "^1.4.0"

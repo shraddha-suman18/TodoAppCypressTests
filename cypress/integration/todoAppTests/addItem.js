@@ -10,7 +10,7 @@ context('Add task', () => {
 	it('should add and list the task added',()=>{
 	    var text= 'first item';
 		todoPage.addItem(text)
-		verifyTodoItemExist(text);
+		todoPage.verifyTodoItemExist(text);
 	});
 
 	it('should be able to add duplicate item',()=>{
